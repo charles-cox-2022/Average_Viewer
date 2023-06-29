@@ -5,7 +5,7 @@ body {
     display: grid;
     grid-template-columns:  1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    background-color: antiquewhite;
+    background-color: black;
     height: 100vh;
     width: 100vw;
 }
@@ -17,6 +17,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: antiquewhite;
+    border-radius: 12px;
 }
 .content {
     grid-row: 3 / span 8;
@@ -35,6 +37,8 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-color: antiquewhite;
+    border-radius: 12px;
 }
 .center {
     display: flex;

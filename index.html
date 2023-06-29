@@ -4,26 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Average Viewer</title>
+    
+    <link href="resources/css/overwrite.css" rel="stylesheet" type="text/css">
     <link href="resources/css/index.css" rel="stylesheet" type="text/css">
     <link href="resources/css/content.css" rel="stylesheet" type="text/css">
+    <link href="resources/css/gridPopup.css" rel="stylesheet" type="text/css">
+    <script src="resources/js/editNumbers.js"defer></script>
+    <script src="resources/js/graphPie.js"></script>
+    <script src="resources/js/graphBar.js"></script>
+    <script src="resources/js/script.js"></script>
 </head>
 <body>
     <div class="gridContainer">
         <div class="header"><h1 class="center">Average Viewer</h1></div>
         <div class="content">
-            <div class="contentGridContainer">
+            <div class="contentGridContainer" id="content-1">
                 <div id="dateRange" class="center"><input type="date" id="date-start"> to <input type="date" id="date-end"></div>
                 <div id="graph" class="center">
 
                 </div>
                 <div id="buttons" class="center">
-                    <button>Edit Numbers</button>
-                    <button>Toggle Graph Type</button>
+                    <button onclick="popupOpen('content-2')">Edit Numbers</button>
+                    <button onclick="popupOpen('content-3')">Toggle Graph Type</button>
+                    <button onclick="popupOpen('content-4')">Settings</button>
                 </div>
             </div>
-            
+            <div class="popupContainer" id="content-2">
+                <div class="popupTitle center"><h2>Edit Numbers</h2></div>
+                <div class="btnClose center">
+                    <button class="btnCorner center" onclick="popupClose('content-2')">Close</button>
+                </div>
+                <div class="popupContent">
+                    <h3 class="center">Numbers</h3>
+                    <ol id="listParent">
+                        <!--Dynamically Generated-->
+                    </ol>
+                    <!--NEED TO ADD INPUT OPTION TO ADD DATE AND NUMBER-->
+                </div>
+            </div>
+            <div class="popupContainer" id="content-3">
+                <div class="popupTitle center"><h2>Graph Options</h2></div>
+                <div class="btnClose center">
+                    <button class="btnCorner center" onclick="popupClose('content-3')">Close</button>
+                </div>
+                <div class="popupContent">
+
+                </div>
+            </div>
+            <div class="popupContainer" id="content-4">
+                <div class="popupTitle center"><h2>Settings</h2></div>
+                <div class="btnClose center">
+                    <button class="btnCorner center" onclick="popupClose('content-4')">Close</button>
+                </div>
+                <div class="popupContent">
+                    
+                </div>
+            </div>
         </div>
         <div class="footer"><h5 class="center">Coded by 901 Web Designs</h5><h5 class="center">Version 0.2</h5></div>
     </div>
+    <script>
+        defaultDates();
+
+        
+    </script>
 </body>
 </html>

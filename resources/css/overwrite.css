@@ -1,0 +1,7 @@
+.active {
+    visibility: visible;
+}
+.hidden {
+    visibility: collapse;
+    display: none;
+}
