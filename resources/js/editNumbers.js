@@ -28,7 +28,7 @@ function clearLocalData() {
 function addNumber(date,number){
     id = Object.keys(numbers).length;
     numbers.push({"ID":id,"Date": date,"Number": number})
-    numbers = sortByDate(numbers);
+    //numbers = sortByDate(numbers);
     updateLocalData();
     refreshList();
 }

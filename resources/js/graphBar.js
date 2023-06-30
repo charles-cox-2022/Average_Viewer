@@ -1,5 +1,5 @@
 
-let btn = document.getElementById()
+//let btn = document.getElementById()
 
 function makeChart(numbers){
 let points = numbers.map(d => {
