@@ -1,7 +1,13 @@
 let numbers = [];
-
+function getNumbers(){
+    return numbers;
+}
 //add number
-
+function eventAddNumber(){
+    let number = document.getElementById('inputNumber').value;
+    let date = document.getElementById('inputDate').value;
+    addNumber(date,number)
+}
 //getLocalData
 function getLocalData() {
     let data = localStorage.getItem('RNumbers');
@@ -20,25 +26,39 @@ function clearLocalData() {
     localStorage.setItem('RNumbers','NULL');
 }
 function addNumber(date,number){
-    numbers.push({"Date": date,"Number": number})
+    id = Object.keys(numbers).length;
+    numbers.push({"ID":id,"Date": date,"Number": number})
+    numbers = sortByDate(numbers);
     updateLocalData();
+    refreshList();
 }
 //remove number
-function removeNumber(date,number){
+function removeNumber(id,date,number){
     let newObject = [];
+    let count = 0;
     for(let i = 0; i < Object.keys(numbers).length; i++)
     {
-        if(numbers[i].Date == date && numbers[i].Number == number){
+        
+        if(numbers[i].ID == id && numbers[i].Date == date && numbers[i].Number == number){
             //Do Nothing
         } else {
-            newObject.push({"Date": numbers[i].date,"Number": numbers[i].number})
+            newObject.push({"ID":count,"Date": numbers[i].Date,"Number": numbers[i].Number})
+            count++;
         }
+        
     }
     numbers = newObject;
     updateLocalData();
     refreshList();   
 }
+//Sort Items by Date
+function sortByDate(n){
+    let result = [];
 
+    //SORT
+
+    return result;
+}
 //create list of objects
 function createList(){
     let parent = document.getElementById("listParent");
@@ -48,7 +68,8 @@ function createList(){
         div.className = 'center';
         parent.appendChild(div);
         let btn = document.createElement('button');
-        btn.addEventListener('click',function(){removeNumber(numbers[i].Date,numbers[i].Number);});
+        btn.innerText = "Remove";
+        btn.addEventListener('click',function(){removeNumber(i,numbers[i].Date,numbers[i].Number);});
         let list = document.createElement('li');
         list.innerText = `${numbers[i].Date}: ${numbers[i].Number}`
         div.appendChild(list)

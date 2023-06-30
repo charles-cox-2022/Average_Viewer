@@ -9,10 +9,7 @@
     <link href="resources/css/index.css" rel="stylesheet" type="text/css">
     <link href="resources/css/content.css" rel="stylesheet" type="text/css">
     <link href="resources/css/gridPopup.css" rel="stylesheet" type="text/css">
-    <script src="resources/js/editNumbers.js"defer></script>
-    <script src="resources/js/graphPie.js"></script>
-    <script src="resources/js/graphBar.js"></script>
-    <script src="resources/js/script.js"></script>
+    
 </head>
 <body>
     <div class="gridContainer">
@@ -25,21 +22,25 @@
                 </div>
                 <div id="buttons" class="center">
                     <button onclick="popupOpen('content-2')">Edit Numbers</button>
-                    <button onclick="popupOpen('content-3')">Toggle Graph Type</button>
-                    <button onclick="popupOpen('content-4')">Settings</button>
+                    <button class="hidden" onclick="popupOpen('content-3')">Toggle Graph Type</button>
+                    <button class="hidden" onclick="popupOpen('content-4')">Settings</button>
                 </div>
             </div>
             <div class="popupContainer" id="content-2">
                 <div class="popupTitle center"><h2>Edit Numbers</h2></div>
                 <div class="btnClose center">
-                    <button class="btnCorner center" onclick="popupClose('content-2')">Close</button>
+                    <button class="btnCorner center" onclick="popupClose('content-2');makeChart(getNumbers());">Close</button>
                 </div>
                 <div class="popupContent">
                     <h3 class="center">Numbers</h3>
                     <ol id="listParent">
                         <!--Dynamically Generated-->
                     </ol>
-                    <!--NEED TO ADD INPUT OPTION TO ADD DATE AND NUMBER-->
+                </div>
+                <div class="popupExtraBtn">
+                    <input type="number" id="inputNumber">
+                    <input type="date" id="inputDate">
+                    <button onclick="eventAddNumber();">Add Number</button>
                 </div>
             </div>
             <div class="popupContainer" id="content-3">
@@ -63,9 +64,14 @@
         </div>
         <div class="footer"><h5 class="center">Coded by 901 Web Designs</h5><h5 class="center">Version 0.2</h5></div>
     </div>
+    <script src="resources/js/editNumbers.js"></script>
+    <script src="https://code.jscharting.com/latest/jscharting.js"></script>
+    <script src="resources/js/graphPie.js"></script>
+    <script src="resources/js/graphBar.js"></script>
+    <script src="resources/js/script.js"></script>
     <script>
         defaultDates();
-
+        makeChart(getNumbers())
         
     </script>
 </body>

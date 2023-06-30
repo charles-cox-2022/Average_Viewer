@@ -25,3 +25,7 @@
     border: 5px solid black;
     border-radius: 12px;
 }
+.popupExtraBtn {
+    grid-row: 3 / span 1;
+    grid-column: 3 / span 2;
+}
