@@ -1,3 +1,6 @@
+
+let btn = document.getElementById()
+
 function makeChart(numbers){
 let points = numbers.map(d => {
     return{ x: d.Date, y: d.Number};
