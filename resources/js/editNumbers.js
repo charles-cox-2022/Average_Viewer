@@ -12,7 +12,7 @@ function eventAddNumber(){
 function getLocalData() {
     let data = localStorage.getItem('RNumbers');
     numbers = JSON.parse(data);
-    if(numbers == 'NULL'){
+    if(numbers == 'NULL' && numbers == 'undefined'){
         numbers = [];
     }
 }
