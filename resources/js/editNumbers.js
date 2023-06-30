@@ -13,7 +13,9 @@ function getLocalData() {
     let data = localStorage.getItem('RNumbers');
     numbers = JSON.parse(data);
     if(numbers == 'NULL' && numbers == 'undefined'){
-        numbers = [];
+        numbers = [
+            {"ID":0,"Date": "2023-01-01","Number": 100}
+        ];
     }
 }
 //updateLocalData
